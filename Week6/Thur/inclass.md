@@ -1,0 +1,3 @@
+# Class notes
+
+display inline
