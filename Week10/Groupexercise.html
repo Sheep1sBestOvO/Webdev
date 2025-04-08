@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Rock, Paper, Scissors Game</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .choose {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 15px 0;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Rock, Paper, Scissors Game</h1>
+
+    <div id="result">
+      Choose Rock, Paper, or Scissors!
+    </div>
+
+    <div class="choose">
+      <button id="rock">Rock</button>
+      <button id="paper">Paper</button>
+      <button id="scissors">Scissors</button>
+      <button id="reset">Reset Game</button>
+    </div>
+
+    <div class="score">
+      <div class="score-item">Wins: <span id="wins">0</span></div>
+      <div class="score-item">Ties: <span id="ties">0</span></div>
+      <div class="score-item">Losses: <span id="losses">0</span></div>
+    </div>
+
+    <script>
+      const choices = ["rock", "paper", "scissors"];
+      const resultDisplay = document.getElementById("result");
+      const resetButton = document.getElementById("reset");
+
+      let wins = 0;
+      let ties = 0;
+      let losses = 0;
+
+      const winsDisplay = document.getElementById("wins");
+      const tiesDisplay = document.getElementById("ties");
+      const lossesDisplay = document.getElementById("losses");
+
+
+      document.getElementById("rock").addEventListener("click", () => playgame("rock"));
+      document.getElementById("paper").addEventListener("click", () => playgame("paper"));
+      document.getElementById("scissors").addEventListener("click", () => playgame("scissors"));
+      resetButton.addEventListener("click", resetGame);
+
+      function playgame(playerChoice) {
+        const compChoice = choices[Math.floor(Math.random() * 3)];
+        let result;
+
+        if (playerChoice === compChoice) {
+          result = "It's a tie!";
+          ties++;
+        } else if (
+          (playerChoice === "rock" && compChoice === "scissors") ||
+          (playerChoice === "paper" && compChoice === "rock") ||
+          (playerChoice === "scissors" && compChoice === "paper")
+        ) {
+          result = "You win!";
+          wins++;
+        } else {
+          result = "You lose!";
+          losses++;
+        }
+
+        resultDisplay.innerHTML = `
+          You chose ${playerChoice}.<br>
+          Computer chose ${compChoice}.<br>
+          ${result}
+        `;
+
+        update();
+      }
+
+      function update() {
+        winsDisplay.textContent = wins;
+        tiesDisplay.textContent = ties;
+        lossesDisplay.textContent = losses;
+      }
+
+      function resetGame() {
+        wins = 0;
+        ties = 0;
+        losses = 0;
+        update();
+        resultDisplay.textContent = "Choose Rock, Paper, or Scissors!";
+      }
+    </script>
+  </body>
+</html>
