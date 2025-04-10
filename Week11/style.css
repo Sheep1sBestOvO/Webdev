@@ -1,0 +1,35 @@
+body {
+    font-family: 'Gill Sans Extrabold', sans-serif;
+    background-color: #d8b877;
+    padding: 30px;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #c0392b;
+    margin-bottom: 20px;
+  }
+  
+  #array {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .food-item {
+    width: 160px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .food-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
