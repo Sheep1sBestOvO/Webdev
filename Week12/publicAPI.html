@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Quote</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #fefae0;
+        text-align: center;
+        padding: 2rem;
+      }
+      #card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      img {
+        max-width: 100%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <h1 id="name">Loading...</h1>
+      <p id="quote"></p>
+    </div>
+    <!-- <button onclick="loadRandomFilm()">Next Film</button> -->
+
+    <script>
+        async function loadRandomQuote(){
+            const res = await fetch("https://api.animechan.io/v1");
+            const character = await res.json();
+
+            const randomChar = character[Math.floor(Math.random() * character.length)];
+
+            document.getElementById("name").textContent = randomChar.name;
+           
+        }
+          
+        loadRandomQuote();
+    </script>
+  </body>
+</html>
