@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anime Quote</title>
+    <title>Pokémon Info</title>
     <style>
       body {
         font-family: sans-serif;
@@ -20,32 +20,28 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
       img {
-        max-width: 100%;
+        max-width: 200px;
         border-radius: 1rem;
         margin-bottom: 1rem;
       }
-      
     </style>
   </head>
   <body>
     <div id="card">
       <h1 id="name">Loading...</h1>
-      <p id="quote"></p>
+      <img id="sprite" src="" alt="Pokemon Sprite" />
     </div>
-    <!-- <button onclick="loadRandomFilm()">Next Film</button> -->
 
     <script>
-        async function loadRandomQuote(){
-            const res = await fetch("https://api.animechan.io/v1");
-            const character = await res.json();
+      async function loadPokemon() {
+        const res = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
+        const data = await res.json();
 
-            const randomChar = character[Math.floor(Math.random() * character.length)];
+        document.getElementById("name").textContent = data.name.toUpperCase();
+        document.getElementById("sprite").src = data.sprites.front_default;
+      }
 
-            document.getElementById("name").textContent = randomChar.name;
-           
-        }
-          
-        loadRandomQuote();
+      loadPokemon();
     </script>
   </body>
 </html>
