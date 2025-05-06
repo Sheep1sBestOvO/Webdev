@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jay Chou Tribute</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/jaylogo.png" alt="Jay Chou Logo">
+      </div>
+    </div>
+  </header>
+
+  <section class="bio">
+    <img src="assets/jay-profile.png" alt="Jay Chou">
+    <p>Jay Chou is a Chinese singer-song writer and music producer, known for blending Chinese traditional instruments with Western pop and R&B. He debuted in 2000 and has since become one of Asia's most influential musicians.</p>
+  </section>
+
+  <section class="featured-song">
+    <h2>Featured Song: 花海 (Flower Sea)</h2>
+    <audio controls>
+      <source src="assets/huahai.mp3" type="audio/mpeg">
+    </audio>
+    <button id="toggle-lyrics">Show Lyrics</button>
+    <div id="lyrics" class="hidden">
+      <pre>
+风 沉醉的晚上
+被风吹过的夏天
+我们拥有的美好
+像花海一样绚烂
+      </pre>
+    </div>
+  </section>
+
+ 
+  <section class="albums-scroll">
+    <h2>Classic Albums</h2>
+    <div class="albums">
+      <a href="album-jay.html" class="album">
+        <div class="album-content">
+          <img src="assets/album-jay.png" alt="Jay (2000)">
+          <div class="album-overlay">
+            <h3>Jay</h3>
+            <p>Debut album, released in 2000.</p>
+          </div>
+        </div>
+      </a>
+      <a href="album-fantasy.html" class="album">
+        <div class="album-content">
+          <img src="assets/album-fantasy.png" alt="Fantasy (2001)">
+          <div class="album-overlay">
+            <h3>Fantasy</h3>
+            <p>Iconic sophomore album with hit ballads.</p>
+          </div>
+        </div>
+      </a>
+      <a href="album-yehuimei.html" class="album">
+        <div class="album-content">
+          <img src="assets/album-yehuimei.png" alt="Ye Hui Mei (2003)">
+          <div class="album-overlay">
+            <h3>Ye Hui Mei</h3>
+            <p>Named after Jay's mother, showcasing musical depth.</p>
+          </div>
+        </div>
+      </a>
+      <a href="album-november.html" class="album">
+        <div class="album-content">
+          <img src="assets/album-novem.png" alt="November's Chopin (2005)">
+          <div class="album-overlay">
+            <h3>November's Chopin</h3>
+            <p>Emotive piano ballads and orchestral arrangements.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+   
+  <footer>
+    <p>&copy; 2025 Jay Chou Tribute Page</p>
+  </footer>
+
+
+  <div id="cover-overlay" class="hidden">
+    <div class="cover-content">
+      <img src="assets/album-jay.png" alt="Cover Art" id="rotating-cover">
+      <div class="cover-lyrics-scroll">
+        <h2>花海 · Flower Sea</h2>
+        <div class="scrolling-lyrics" id="scrolling-lyrics">
+          <p>靜止了 所有的花開</p>
+          <p>遙遠了 清晰了愛</p>
+          <p>天鬱悶 愛卻很喜歡</p>
+          <p>那時候 我不懂 這叫愛</p>
+          <p>妳喜歡 站在那窗台</p>
+          <p>妳好久 都沒再來</p>
+          <p>彩色的時間染上空白</p>
+          <p>是妳流的淚暈開</p>
+
+          <p>不要妳離開 距離隔不開</p>
+          <p>思念變成海 在窗外進不來</p>
+          <p>原諒說太快 愛成了阻礙</p>
+          <p>手中的風箏放太快回不來</p>
+          <p>不要妳離開 回憶劃不開</p>
+          <p>欠妳的寵愛 我在等待重來</p>
+          <p>天空仍燦爛 它愛著大海</p>
+          <p>情歌被打敗 愛已不存在</p>
+
+          <p>你喜歡 站在那窗台</p>
+          <p>妳好久 都沒再來</p>
+          <p>彩色的時間染上空白</p>
+          <p>是妳流的淚暈開</p>
+
+          <p>不要妳離開 距離隔不開</p>
+          <p>思念變成海 在窗外進不來</p>
+          <p>原諒說太快 愛成了阻礙</p>
+          <p>手中的風箏放太快回不來</p>
+          <p>不要妳離開 回憶劃不開</p>
+          <p>欠妳的寵愛 我在等待重來</p>
+          <p>天空仍燦爛 它愛著大海</p>
+          <p>情歌被打敗 愛已不存在</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="comments-section">
+    <h2>Comments</h2>
+    <form id="comment-form">
+      <input type="text" id="name" placeholder="Your name" required />
+      <textarea id="message" placeholder="Write your comment..." required></textarea>
+      <button type="submit">Post</button>
+    </form>
+    <div id="comment-list"></div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

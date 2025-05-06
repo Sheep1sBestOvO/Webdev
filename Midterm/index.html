@@ -19,24 +19,57 @@
         <section class="recipes">
             <h1>Recommended Recipes</h1>
             <div class="container">
-                <div class="card">
+                <div class="card" data-id="salad">
                     <img src="salad.jpg">
                     <h2><a href="salad.html">Garden Salad</a></h2>
                     <p>Crispy and fresh salad with a mix of vegetables and dressing.</p>
+                    <button class="favorite-btn">❤️</button>
                 </div>
-                <div class="card">
+                
+                <div class="card" data-id="curry">
                     <img src="curry.jpg">
                     <h2><a href="curry.html">Chicken Curry</a></h2>
                     <p>Rich and flavorful curry made with tender chicken and aromatic spices.</p>
+                    <button class="favorite-btn">❤️</button>
                 </div>
-                <div class="card">
+                <div class="card" data-id="steak">
                     <img src="steak.jpg">
                     <h2><a href="steak.html"> Grilled Steak</a></h2>
                     <p>Perfectly grilled steak with a side of vegetables and sauce.</p>
+                    <button class="favorite-btn">❤️</button>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.favorite-btn');
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    
+            buttons.forEach(btn => {
+                const card = btn.closest('.card');
+                const recipeId = card.dataset.id;
+    
+                // 初始状态
+                if (favorites.includes(recipeId)) {
+                    btn.classList.add('favorited');
+                }
+    
+                btn.addEventListener('click', () => {
+                    if (favorites.includes(recipeId)) {
+                        favorites.splice(favorites.indexOf(recipeId), 1);
+                        btn.classList.remove('favorited');
+                    } else {
+                        favorites.push(recipeId);
+                        btn.classList.add('favorited');
+                    }
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                });
+            });
+        });
+    </script>
+    
 
 </body>
 </html>

@@ -125,3 +125,18 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
+
+.favorite-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.favorite-btn.favorited {
+    color: red;
+    transform: scale(1.3);
+}
+
+
