@@ -1,0 +1,65 @@
+
+html {
+    font-size: 10px;
+  }
+  body {
+    font-family: sans-serif;
+    background: #ccc;
+  }
+  
+
+  
+ 
+  .card {
+    width: 400px;
+    height: 200px;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .card header {
+    background: linear-gradient(to right, darkred, red);
+    padding: 1em;
+    height: 5em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .card header h2 {
+    font-size: 2em; 
+    line-height: 3em; 
+    margin: 0;
+  }
+  
+  .card footer {
+    background: linear-gradient(to right, #ff6666, darkred);
+    padding: 1em;
+    height: 5em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .card footer p {
+    font-size: 1.5em; /* 15px */
+    line-height: 3em;
+    margin: 0;
+  }
+  
+  
+  .card article {
+    height: 12em;
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 1em;
+    color: #eee;
+  }
+
+  .card article img {
+    float: right;
+    max-height: 100%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
