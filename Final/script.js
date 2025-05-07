@@ -1,11 +1,10 @@
-// Toggle typed lyrics below audio
 const toggleBtn = document.getElementById('toggle-lyrics');
 const lyricsDiv = document.getElementById('lyrics');
 const lyricsText = `
-风 沉醉的晚上
-被风吹过的夏天
-我们拥有的美好
-像花海一样绚烂
+不要妳離開 距離隔不開
+思念變成海 在窗外進不來
+原諒說太快 愛成了阻礙
+手中的風箏放太快回不來
 `;
 
 let typedIndex = 0;

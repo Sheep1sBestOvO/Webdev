@@ -23,6 +23,52 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        // Show favorites on profile.html
+document.addEventListener('DOMContentLoaded', () => {
+    const isProfilePage = window.location.pathname.includes('profile.html');
+    if (!isProfilePage) return;
+
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const container = document.getElementById('favorites-container');
+
+    const recipeData = {
+        salad: {
+            title: 'Garden Salad',
+            img: 'salad.jpg',
+            link: 'salad.html',
+            description: 'Crispy and fresh salad with a mix of vegetables and dressing.'
+        },
+        curry: {
+            title: 'Chicken Curry',
+            img: 'curry.jpg',
+            link: 'curry.html',
+            description: 'Rich and flavorful curry made with tender chicken and aromatic spices.'
+        },
+        steak: {
+            title: 'Grilled Steak',
+            img: 'steak.jpg',
+            link: 'steak.html',
+            description: 'Perfectly grilled steak with a side of vegetables and sauce.'
+        }
+    };
+
+    favorites.forEach(id => {
+        const data = recipeData[id];
+        if (data) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <img src="${data.img}">
+                <h2><a href="${data.link}">${data.title}</a></h2>
+                <p>${data.description}</p>
+                <button class="favorite-btn favorited">❤️</button>
+            `;
+            container.appendChild(card);
+        }
+    });
+});
+
+    </script>
 </body>
 </html>
